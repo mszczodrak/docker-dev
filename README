@@ -1,0 +1,4 @@
+
+docker build -t <image-name> ./ubuntu-dev
+
+docker run -it -p 9022:22 --name=<container-name> <image-name>
