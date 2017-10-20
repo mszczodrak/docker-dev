@@ -18,6 +18,10 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
+# SERF
+RUN wget https://releases.hashicorp.com/serf/0.8.1/serf_0.8.1_linux_amd64.zip -P /tmp/ && unzip /tmp/serf_0.8.1_linux_amd64.zip -d /usr/local/bin
+RUN chmod a+x /usr/local/bin/serf
+
 EXPOSE 22
 
 ENTRYPOINT service ssh restart && bash
